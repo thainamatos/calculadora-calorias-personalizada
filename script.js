@@ -38,11 +38,25 @@ function handleSubmit(event){
         </li>
       </ul>
     </div>
+
+    <button class="restart" id="restart">Refazer</button>
   `;
 
+  
   const result = document.getElementById('result');
-
+  const restartButton = document.getElementById('restart');
   result.innerHTML = layout;
+
+  form.style.display = "none";
+
+  restart.addEventListener('click', restartForm)
+
+  function restartForm(event) {
+    form.reset();
+    form.style.display = "block";
+    result.style.display = "none";
+  };
+
 }
 
 function getSelectedValue(id) {
@@ -53,4 +67,3 @@ function getSelectedValue(id) {
 function getInputNumberValue(id) {
   return Number(document.getElementById(id).value);
 }
-
